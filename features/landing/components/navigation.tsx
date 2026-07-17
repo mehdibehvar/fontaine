@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +16,7 @@ export function Navigation() {
         }
       `}</style>
       
-      <div className="max-w-container-max mx-auto px-margin-desktop flex justify-between items-center py-4">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex justify-between items-center py-4">
         {/* Logo */}
         <Link href="/" className="text-headline-md font-headline-md tracking-tight text-primary">
           Fontaine
@@ -45,14 +46,14 @@ export function Navigation() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-6">
-          <button className="hover:opacity-80 transition-opacity" aria-label="Search">
-            <span className="material-symbols-outlined text-primary">search</span>
+            <button className="hover:opacity-80 transition-opacity" aria-label="Search">
+            <Search className="text-primary" />
           </button>
           <button className="hover:opacity-80 transition-opacity" aria-label="Account">
-            <span className="material-symbols-outlined text-primary">person</span>
+            <User className="text-primary" />
           </button>
           <button className="hover:opacity-80 transition-opacity flex items-center gap-2" aria-label="Shopping cart">
-            <span className="material-symbols-outlined text-primary">shopping_bag</span>
+            <ShoppingBag className="text-primary" />
             <span className="text-label-sm text-primary">(0)</span>
           </button>
 
@@ -62,9 +63,7 @@ export function Navigation() {
             className="md:hidden hover:opacity-80 transition-opacity"
             aria-label="Menu"
           >
-            <span className="material-symbols-outlined text-primary">
-              {isOpen ? 'close' : 'menu'}
-            </span>
+            {isOpen ? <X className="text-primary" /> : <Menu className="text-primary" />}
           </button>
         </div>
       </div>
@@ -72,7 +71,7 @@ export function Navigation() {
       {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden border-t border-outline-variant/10 bg-surface-container-low">
-          <div className="max-w-container-max mx-auto px-margin-desktop py-6 space-y-4">
+          <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 space-y-4">
             {[
               { href: '#archive', label: 'Archive' },
               { href: '#essences', label: 'Essences' },

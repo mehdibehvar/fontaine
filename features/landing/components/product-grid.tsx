@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Badge } from '@/components/ui/badge';
+import { Plus } from 'lucide-react';
 
 interface Product {
   id: string;
@@ -49,9 +50,9 @@ const products: Product[] = [
 
 export function ProductGrid() {
   return (
-    <section className="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+    <section className="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-8">
-        <h2 className="font-headline-lg text-headline-lg">Botanical Specimens</h2>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Botanical Specimens</h2>
         <a className="font-label-md text-label-md text-primary group flex items-center gap-2 hover:text-primary/80 transition-colors">
           View Complete Apothecary
           <span className="w-12 h-px bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
@@ -90,7 +91,7 @@ export function ProductGrid() {
                 ${product.price.toFixed(2)}
               </p>
               <button className="bg-surface-container-high p-2 rounded-full hover:bg-primary hover:text-on-primary transition-all">
-                <span className="material-symbols-outlined">add</span>
+                 <Plus />
               </button>
             </div>
           </div>

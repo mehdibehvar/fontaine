@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface EssentialItem {
   id: string;
@@ -47,21 +48,21 @@ const essentials: EssentialItem[] = [
 export function RitualEssentials() {
   return (
     <section className="bg-surface-container-low py-section-gap">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Header with Navigation */}
         <div className="flex justify-between items-end mb-16">
           <div>
             <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">
               Essentials
             </p>
-            <h2 className="font-headline-lg text-headline-lg">Ritual Essentials</h2>
+            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Ritual Essentials</h2>
           </div>
           <div className="flex gap-4">
             <button className="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
-              <span className="material-symbols-outlined">chevron_left</span>
+              <ChevronLeft />
             </button>
             <button className="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary hover:border-primary transition-all">
-              <span className="material-symbols-outlined">chevron_right</span>
+              <ChevronRight />
             </button>
           </div>
         </div>

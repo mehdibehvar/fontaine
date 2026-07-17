@@ -35,13 +35,13 @@ const categories: CategoryTile[] = [
 export function CategoryTiles() {
   return (
     <section className="bg-surface-container-lowest py-section-gap">
-      <div className="max-w-container-max mx-auto px-margin-desktop">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         {/* Section Header */}
         <div className="text-center mb-20">
           <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-4">
             Curated Journeys
           </p>
-          <h2 className="font-headline-lg text-headline-lg">Intentional Remedies</h2>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Intentional Remedies</h2>
         </div>
 
         {/* Category Grid */}

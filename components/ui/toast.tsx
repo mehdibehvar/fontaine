@@ -1,5 +1,6 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { X } from 'lucide-react';
 
 const toastVariants = cva(
   'flex items-center gap-4 p-4 rounded shadow-2xl animate-pulse-subtle',
@@ -49,7 +50,7 @@ const Toast = React.forwardRef<HTMLDivElement, ToastProps>(
           className="flex-shrink-0 text-outline hover:text-on-surface transition-colors"
           aria-label="Close toast"
         >
-          <span className="material-symbols-outlined text-lg">close</span>
+          <X className="text-lg" />
         </button>
       )}
     </div>

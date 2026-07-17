@@ -1,11 +1,13 @@
+import { Globe, Sprout, Trees } from 'lucide-react';
+
 export function Footer() {
   return (
     <footer className="bg-surface-container-lowest border-t border-outline-variant/10">
       {/* Main Footer */}
-      <div className="max-w-container-max mx-auto px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap grid grid-cols-1 md:grid-cols-4 gap-gutter">
         {/* Brand Column */}
         <div className="md:col-span-1">
-          <div className="text-headline-lg font-headline-lg text-primary dark:text-primary mb-8">
+          <div className="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary dark:text-primary mb-8">
             Fontaine
           </div>
           <p className="text-on-surface-variant font-body-md text-body-md max-w-xs mb-8">
@@ -17,21 +19,21 @@ export function Footer() {
               className="text-on-surface-variant hover:text-primary transition-colors"
               aria-label="Website"
             >
-              <span className="material-symbols-outlined">public</span>
+               <Globe />
             </a>
             <a
               href="#"
               className="text-on-surface-variant hover:text-primary transition-colors"
               aria-label="Wellness"
             >
-              <span className="material-symbols-outlined">spa</span>
+               <Sprout />
             </a>
             <a
               href="#"
               className="text-on-surface-variant hover:text-primary transition-colors"
               aria-label="Nature"
             >
-              <span className="material-symbols-outlined">forest</span>
+               <Trees />
             </a>
           </div>
         </div>
@@ -85,7 +87,7 @@ export function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="max-w-container-max mx-auto px-margin-desktop py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-on-surface-variant font-body-md text-body-md opacity-60">
           © 2024 Fontaine Apothecary. All rights reserved.
         </p>

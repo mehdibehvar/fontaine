@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Quote } from 'lucide-react';
 
 interface Testimonial {
   id: string;
@@ -46,17 +47,12 @@ const smallTestimonials: SmallTestimonial[] = [
 
 export function Testimonials() {
   return (
-    <section className="py-section-gap max-w-container-max mx-auto px-margin-desktop">
+    <section className="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
         {/* Main Testimonial */}
         <div className="flex flex-col justify-center">
-          <span
-            className="material-symbols-outlined text-primary text-[64px] mb-8"
-            style={{ fontVariationSettings: "'FILL' 1" }}
-          >
-            format_quote
-          </span>
-          <blockquote className="font-headline-lg text-headline-lg text-on-background mb-10 italic leading-snug">
+          <Quote className="text-primary w-16 h-16 mb-8" />
+          <blockquote className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-10 italic leading-snug">
             {mainTestimonial.quote}
           </blockquote>
           <div className="flex items-center gap-4">

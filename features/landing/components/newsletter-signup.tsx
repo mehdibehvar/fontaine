@@ -34,11 +34,11 @@ export function NewsletterSignup() {
 
   return (
     <section className="py-section-gap bg-surface-container-lowest">
-      <div className="max-w-3xl mx-auto px-margin-desktop text-center">
+      <div className="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
         <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-6">
           Join the Archive
         </p>
-        <h2 className="font-headline-lg text-headline-lg mb-8">
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8">
           Receive seasonal botanical wisdom and early access to rare harvests.
         </h2>
 

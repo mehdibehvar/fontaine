@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import { BookOpen } from 'lucide-react';
 
 export function BrandStory() {
   return (
     <section className="py-section-gap overflow-hidden">
-      <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-2 items-center gap-24">
+      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 items-center gap-24">
         {/* Image Side */}
         <div className="relative">
           <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
@@ -29,7 +30,7 @@ export function BrandStory() {
           <p className="font-label-md text-label-md text-primary uppercase tracking-widest mb-6">
             Our Philosophy
           </p>
-          <h2 className="font-display-lg text-headline-lg text-on-background mb-8">
+          <h2 className="font-display-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-8">
             The Purity of <br /> Raw Sourcing
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
@@ -45,7 +46,7 @@ export function BrandStory() {
           </p>
           <button className="group inline-flex items-center gap-4 text-primary font-label-md text-label-md hover:text-primary/80 transition-colors">
             <span className="p-4 rounded-full border border-primary group-hover:bg-primary group-hover:text-on-primary transition-all duration-300">
-              <span className="material-symbols-outlined">menu_book</span>
+              <BookOpen />
             </span>
             Read Our Full Story
           </button>

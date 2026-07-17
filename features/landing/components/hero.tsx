@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 export function LandingHero() {
   return (
@@ -17,9 +18,9 @@ export function LandingHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-container-max mx-auto px-margin-desktop w-full pb-24">
+      <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full pb-24">
         <div className="max-w-3xl">
-          <h1 className="font-display-lg text-display-lg text-on-background mb-8 leading-[1.05]">
+          <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 leading-[1.05]">
             Preserving the{' '}
             <span className="text-primary italic">Alchemy</span> of Herbs
           </h1>
@@ -30,9 +31,7 @@ export function LandingHero() {
           <div className="flex gap-6 flex-wrap">
             <Button variant="primary" size="lg" className="flex items-center gap-3 group">
               Explore the Archive
-              <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="secondary" size="lg">
               Our Process
