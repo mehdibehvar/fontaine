@@ -9,7 +9,7 @@ export function BrandStory() {
           <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-lg shadow-2xl">
             <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDULO-UWUHQ5Toqj-ChndN-K0cEPXoE2OPARuTZ5zvX1mhOflDwyAeGzXrl9722Shot6pC0CHfuZLAbTPhobKeSy0zEHpWPvIYgt51KdDpvrjBNcurPnHHX_avXuEYqOxVeUIDdQWOHOom9PHN-RutBWof84u4ATYkZ1b7PIj_l3VYDHS46e1aOoYdQghX2iea0tWvizd3M04o7zpfo4XvZVT_Lao2ZDkkKtilXJjnIqEIaHEom1j0G8Jv2QV8e9Ad4wtJii9rapbo"
+               src="/herbs/brand-story.jpg"
               alt="Artisan hands carefully sorting dried herbs"
               fill
               className="object-cover"

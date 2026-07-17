@@ -7,7 +7,7 @@ export function LandingHero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0 scale-105 transition-transform duration-[10s] hover:scale-100">
         <Image
-          src="https://lh3.googleusercontent.com/aida/AP1WRLsWlYIbyggO0ij8zMrxd9ggMNw5wfFYt5kHlP-HOdgV0Hg7glElrknOEMhQgwJumdQUTWcaGebOYvln4Wm-bwRDsjvarxefcqe05yU9SnvQ9cYdNxSMI6ZASAcFaWeHrD2ZCFS436BvYJ4jKDOB4u56oFIR4uCe_xpNe_1frHHP-VFd_9MZg2GzNh8uz5FQBxpkcYAre8dD0BGJMX7ivYjiML8KR20kbRGMIpSjg525wQZrYXOqYN1v2Y8"
+          src="/herbs/hero.svg"
           alt="Fontaine hero background - premium botanical imagery"
           fill
           priority

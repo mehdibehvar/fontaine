@@ -17,9 +17,8 @@ const products: Product[] = [
     name: 'Whole Thyme',
     category: 'Hand-Dried / 30g',
     price: 34.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuB5Ed3eQ2xccNIT7_swtfBoeZfcGupkdnBo-LFSpLQ3nIxmdiy8mBLvEZJNZ9wAuml_tEwFVUjEfhWwRsL8cT8aHryuWghtBGGlCZDO9pZlDNiTsDr5xKglQrE6hfxcbVShJ24EAKYWcfwfcUV8cUeMQL53EH476SvKgs-vqLimId8S9QlD4ctlhwgCh5J_o-LHRFslpw_fx_I3SlGsXbOyQ6P6lwcBJXynh-yJ7dhrcEgami6PziEATPpdjZfNPetyYQw0CClcOl4',
-    imageAlt: 'Fontaine whole thyme in premium packaging',
+      image: '/herbs/thyme.jpg',
+     imageAlt: 'Fontaine whole thyme in premium packaging',
     badge: 'Limited Release',
   },
   {
@@ -27,27 +26,24 @@ const products: Product[] = [
     name: 'Dried Borage Flower',
     category: 'Ritual Grade / 15g',
     price: 42.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuC1tiwrZvRFtSp-VKWCbfbyUztaVwbI9UMxv8ZNaLEuqXdMUThGEYLACArHOUOJPh74wtr2Zz2361AP_AJDPpefXTzdE4C0TDmZFSzvug-eHBcdU_q2j880Ps-x-eXwQTU922Z2G9a-lZJpTRbboRXShMcvxIJGk5ndWCiJoZWkt6qapdMlJytr9_oG6XlsZ9TzQ6i1fNkzAAKXb9feGxaYQbSfst2mA7zx0afXR_LRnggLVezzAhFfZWHZ-kwZdNe1_cEoQj85lE8',
-    imageAlt: 'Dried borage flowers in premium glass jar',
+      image: '/herbs/borage.jpg',
+     imageAlt: 'Dried borage flowers in premium glass jar',
   },
   {
     id: '3',
     name: 'Vesper Blend',
     category: 'Sleep Tonic / 50ml',
     price: 58.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDPnzhT916NXsYBZUGY8kiCKIIqZtpduvHNiyQDcWnyVg18ieVzkkdb5NBO4vitfNZPChJNGJCJtuqeg-8cGwI8nop5rASWkxdMPeP2ya2i6_16Pr8pCpZeipUBQgvRTzHP926wycvKDIWOIZR-4Dy7UcvRe35zdebqvh2rdb-S8uyokbLdxCxpldfZkkzfV6QQXqEj1Lyhwz3hICgo2b1MeJ87tH7fVlhTiPB1kdUQDi3sq-nVLzpdj51wfD1UNwmbAMXT9OMbk-I',
-    imageAlt: 'Fontaine vesper sleep blend bottle',
+      image: '/herbs/vesper.jpg',
+     imageAlt: 'Fontaine vesper sleep blend bottle',
   },
   {
     id: '4',
     name: 'Desert Sage',
     category: 'Smudge Ritual / Pair',
     price: 28.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuB6trI3Ee5mVlvn2_w1OgzOtRDGPjokjmmOtiJhzJMn-Qm87QB4ZcTe8qDEcDQDhfeCBJjK3GyqGov90glZSdvMP0dluUQD7Tk5OHxGoOeFq7dxlkS6BizYpynlWNn4ezR-BAqixKWUcZUphq6LishQj_8U1_hL4jI5dLLX1b8zije0Cjnl8-ZnX_yJq69Giz6pLhOP9TID6LxdaDOzlud2kdGycr2xc05oFh0EV46UImGK3VzlyrxIKHiuLFVwDmWt3t6BOTDnsDM',
-    imageAlt: 'Desert sage smudge sticks from Fontaine',
+      image: '/herbs/sage.jpg',
+     imageAlt: 'Desert sage smudge sticks from Fontaine',
   },
 ];
 

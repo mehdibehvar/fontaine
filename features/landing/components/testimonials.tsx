@@ -21,9 +21,8 @@ const mainTestimonial: Testimonial = {
     '"Fontaine has transformed my relationship with wellness. Their herbs aren\'t just products; they are a bridge to a slower, more intentional way of living."',
   author: 'Elena Varennes',
   role: 'Botanical Curator',
-  image:
-    'https://lh3.googleusercontent.com/aida-public/AB6AXuA63MPNrqr5PwggHxdyj3czSJx0sv9rUHLcpVa2g1RmLKh0ptMc5apwgWv-vTv_PODdnz_tY7BndG_yTBP1Yqe4AhEscntuyTyHNqHaFpYnXT5hOXM5p0T9jBV7Gu7vKHWYaIE0HJriNdahsi1N95X9s1tsEp0iPehZ2Y8VWCY2dHUnqU_zwmLHDSkbw_QCVvJA8j8HpYj-8HkUw_e_t9clJrDIN8AQoP9WOeChg-8j86kjnpwzq1F7jx4e-3gsKG51Clxj8v2M73U',
-  imageAlt: 'Elena Varennes - Botanical Curator',
+      image: '/herbs/elena.jpg',
+     imageAlt: 'Elena Varennes - Botanical Curator',
 };
 
 const smallTestimonials: SmallTestimonial[] = [

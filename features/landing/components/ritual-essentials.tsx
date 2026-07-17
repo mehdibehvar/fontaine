@@ -15,36 +15,32 @@ const essentials: EssentialItem[] = [
     title: 'The Morning Ritual',
     description: 'Three curated essences for dawn.',
     price: 115.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuA9E7PKk6sSrYsyivHRpCnL8dUpydLfTDu6iZY4KJ1ZgT3YjhM2rumnQBPWMjKnxENodi1z-z-it72yaYcx-qF09PaMHs9K_mZ1EcwkUH8R5Zwz4WbQAelM9uEtcPpcnvfGPQPXCWY4VFkeb6B4T1ICXm1rlv5DUIbUpWIGLdwKezlXE67wCt-afwOL3T7mCzfcHoIbmnHOCSMhq88VPDw2hY-GkOoUDgKjvUiPQoDzmxCLXq805lseL4Fao7DVv38RDYH4sXv9wsE',
-    imageAlt: 'The Morning Ritual - apothecary kit',
+      image: '/herbs/morning-ritual.jpg',
+     imageAlt: 'The Morning Ritual - apothecary kit',
   },
   {
     id: '2',
     title: 'Stone Apothecary Tools',
     description: 'Hand-carved basalt grinding kit.',
     price: 85.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBdlDGtxFg2pMDULrwPICgiiC_fiVjKphehLwiAhKuCpeGi_QFlE4T_3bCcdl3mA7tBeDInT_KE0RvFTuFF3QV3QJMVQqDVBxqVrOixuzNEvD0wEx30OFpmT3pDFMzJ_XAc9ErrWCxoH0EXmCifx26r78BmJdWGovRErCb-5iDEJ8gqNMzBGDIEoqJE_ekwMctdvps_fVJ4ecuNcF2A5Kck1_eb9TyujehTBTPHcsgFV4EqmZF4nQsE7ybxjTA7ojEdUm0yApvjgZE',
-    imageAlt: 'Stone apothecary tools - mortar and pestle',
+      image: '/herbs/apothecary-tools.jpg',
+     imageAlt: 'Stone apothecary tools - mortar and pestle',
   },
   {
     id: '3',
     title: 'Concentrated Spirits',
     description: 'A set of 5 botanical extracts.',
     price: 140.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDyFH7F1LH-Hkqsi2ESWOjK6AIU_EFu5aDKZEN2tP-ci_i869IUWNcY3VR48JdWUz1GVjdjSCxnlrHXIg3mdDTmjUui_HZ5XtE4xaXvyT5um5heMUabq2jd-xuB2Vb4qGwDMoEWtThS1C8e6PvhKHfDCGFvNlFSglWOFlzUUahdIK0AwtuoP8uVjZwZxbYOgRcldvO_jdddtidMEXLe9D_2B-s4Sn0oVPqX6qoo_MVnYp6X7WiWgf899pjEedKYu_YTQ185xCWOTEFk',
-    imageAlt: 'Concentrated spirits - botanical extracts',
+      image: '/herbs/spirits.svg',
+     imageAlt: 'Concentrated spirits - botanical extracts',
   },
   {
     id: '4',
     title: 'Sanctuary Candles',
     description: 'Scented with ritual grade oils.',
     price: 48.0,
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAVSCOrYBu6GrFDQaKqr4ccyT9upRhpe6-oPKjg-Kca3zlku9tILJSA2scdE0idM1vATRSJaOQTcW7DAozHAHB6-EuvpYo7oXrwEXL1uPj2VZcNQqrEGVseUeHAFRXJ7FJN_IbDXIM9zLub5YGDPWMB4Kh-1nUT06fwZ-YFOou_STbpJ6JLPWEGZT6UZjhb3rpMOUb8u0pX7AV_OFRXJzag_fe1KDIEhitl3iug7YX1qQ8lSBp4iEgG6lk_VFXV2IhJQqIqsAJDFngP8',
-    imageAlt: 'Sanctuary candles - hand-poured botanical',
+      image: '/herbs/candles.svg',
+     imageAlt: 'Sanctuary candles - hand-poured botanical',
   },
 ];
 

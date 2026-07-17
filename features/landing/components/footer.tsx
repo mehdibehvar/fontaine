@@ -93,17 +93,17 @@ export function Footer() {
           <img
             alt="Visa accepted"
             className="h-6 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD51cvKtHEobN1IMBKDmSnrk8gLfAeuh-C0ZIKqIwzEhSCd7vdZf0efWsmIpgUdO5Gt91hSIPYGIWWRwCTANr4oVQZCDtkOmJy7b_QydJ0gtiLltpG-2WXEHoeQ3Td6xdGvnKp7y1w0IkpaoryxzJwih-zyyFMhQwIhumM1Pf_BH5pgVmmpfmwhVpx3gObp70f4nEa152iORhWcfD5jlMxVCmZJGrG3N8Ihj3VAaRoCcNcFCcMIPi4k0PoX4_lboaBJjhmhhx3f924"
+            src="/herbs/visa.jpg"
           />
           <img
             alt="Mastercard accepted"
             className="h-6 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBlDyCoGyCAdxwgkZAruxj6f_KCjLKnR-GEyfBY8M8E6B9cFPScAV9KPS0eGK665svn-5AMPNRrw7_FDnMxRjCnC2STCYXpF4jY_EcatTG3RqPoTc01TsijYrU2c7OpOWJt148pZyC0C7i3hsBxhQiVEPwbjNkx6tsUKF--69MIBZjXBf4Xaq5mZq_vQf9fjWywhaeDOE1uBE5FAxT6aXdMNq_WN5s8y8rsjNIYF1DgvsAqDLn8_xDTLDxJdW1k2qWRDOggmQyLX0"
+            src="/herbs/mastercard.jpg"
           />
           <img
             alt="American Express accepted"
             className="h-6 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxBrGedj8zOqqawDnQXNVINuVmjd1etJXDD0YqWrE0CjAgl7dFQPXvkhAWhseJjJZ-ncIZZ0GHJMRctvrrbE6bS_sl8hpPvkwLy0GRUWTiNPWJ4e4E_FYBDGTX620rVWK8FLJondCFuUTM9T_3dixG7ohTgVwHUb9QXUzv0-QZVBV_KofhrGYy602dGb-1bCJHMKJAkCY1hV3k-j7O_5sf_ktEhA1g-QMrlSgL6JcV2r7jayPcpkkNvIciGkHhNiz6HOYz3z8pVRM"
+            src="/herbs/amex.jpg"
           />
         </div>
       </div>

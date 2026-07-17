@@ -12,25 +12,22 @@ const categories: CategoryTile[] = [
   {
     title: 'Calming Herbs',
     description: 'Restore your inner equilibrium with our curated collection of soothing botanicals.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDW6WtTqaB3FykweOIRCefkXf5Qp3MrQZJKyLAsWjZwi1k5qQtnyl64qKCtdy2aLK5p7yIRSZT-5d1cMfRS9KzCGErhFQwSTIMjey7YvOyg-6-uLckCypcW81hZMkZ55QtSM-m2rCRmggCSxJ002MFx4eYCBrXUAoNJMzXi1CR71mor3IxuvXXacGdjEJqu2Ag-5MhefZPTCzHNE3KnlnbofUNyl9Gwu9YrhXv_cpdP2QcbFGrPFsYoyN6k_Ix6Kkzau4cy-TqjYWg',
-    imageAlt: 'Calming herbs - lavender fields at dusk',
+      image: '/herbs/calming.jpg',
+     imageAlt: 'Calming herbs - lavender fields at dusk',
     link: '/categories/calming',
   },
   {
     title: 'Digestive Support',
     description: 'Gentle infusions and potent extracts crafted to nurture your digestive system naturally.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuB65-Icv-CsiWrk-EsDWmJ0shPJPYZ5Y-HUQ8gSAsFh6nfD10CA1SRxoELtx7W1-2l2x617xTlCL35MeEWg9QqDQGitjsZ0UvSxAwiR6x9r0qjgc4medUkrTC4To_8xklsfdosu1GtIJdyteKC3pTguSHKocnxvHlNfA7HvUaHQ9c7wh5l4u5x2L3jZRapoludtUnbCJUYz5FNm5kxXNpMguP15jBH_4ftc7lYmy1O4Fd7cFVk-AEjFCLlvwyQ3ZHS7vbA3u6Lxkxk',
-    imageAlt: 'Digestive support - fennel seeds and peppermint',
+      image: '/herbs/digestive.jpg',
+     imageAlt: 'Digestive support - fennel seeds and peppermint',
     link: '/categories/digestive',
   },
   {
     title: 'Immune Rituals',
     description: 'Fortify your body\'s natural defenses with ancient wisdom and ritualistic care.',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBuOdcJNZDyH0c4l7-uyrK_IxK8-w1q1-phTslic5yMixnh6-z7vmP8ULMVAMl9WwRKFp3E3S-o-Y5qaiC8pgq9zQE9sw2TCdSKtOhNCojnXWbR865hYGFvnIPBDS1t76pcmi8Ordauou5NIPRv9Lm2pXXkP33dmZWNCuiYyvtSMJ2LSQXL0asf13U7--TBNBW1G6BRpwLPOTdGBn7uLoqUJPfJUzBfyh8LHgWXWky8m-zlu3ZOJrDi3G85KtJmMrU-ANLpEgP0-Vc',
-    imageAlt: 'Immune rituals - elderberries and echinacea',
+      image: '/herbs/immune.jpg',
+     imageAlt: 'Immune rituals - elderberries and echinacea',
     link: '/categories/immune',
   },
 ];
