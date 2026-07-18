@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Apothecary | Fontaine</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#131313",
+                    "tertiary-container": "#a9ba78",
+                    "surface-bright": "#393939",
+                    "surface-variant": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-container": "#3d4a14",
+                    "surface-container": "#201f1f",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#353534",
+                    "outline-variant": "#4d4635",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline": "#99907c",
+                    "on-error": "#690005",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-fixed-variant": "#3e4c16",
+                    "on-tertiary": "#283501",
+                    "on-secondary-container": "#6d5000",
+                    "primary-container": "#d4af37",
+                    "surface-container-low": "#1c1b1b",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "primary": "#f2ca50",
+                    "on-primary-fixed": "#241a00",
+                    "secondary-fixed": "#ffdfa0",
+                    "inverse-primary": "#735c00",
+                    "secondary-container": "#ffbf00",
+                    "secondary": "#ffe2ab",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-primary-container": "#554300",
+                    "error-container": "#93000a",
+                    "surface-tint": "#e9c349",
+                    "on-tertiary-fixed": "#161f00",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#ffe088",
+                    "on-secondary": "#402d00",
+                    "on-primary": "#3c2f00",
+                    "secondary-fixed-dim": "#fbbc00",
+                    "on-background": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#d9eaa3",
+                    "tertiary": "#c5d691",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-surface-variant": "#d0c5af",
+                    "tertiary-fixed-dim": "#bdce89"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "section-gap": "120px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .backdrop-blur-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .apothecary-border {
+            border-bottom: 1px solid rgba(153, 144, 124, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(19, 19, 19, 0.8));
+            pointer-events: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low/90 backdrop-blur-xl border-b border-outline-variant/20 shadow-sm transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full">
+<h1 class="font-display-lg text-[24px] text-primary tracking-tighter">Fontaine</h1>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-section-gap px-margin-mobile max-w-container-max mx-auto">
+<!-- Page Title -->
+<section class="mb-12">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">The Apothecary</h2>
+<div class="w-12 h-[1px] bg-primary"></div>
+<p class="font-body-md text-on-surface-variant mt-4 max-w-xs leading-relaxed italic">
+                Sourced from ancient soils, preserved through time. Rare essences and raw botanicals.
+            </p>
+</section>
+<!-- Product Grid (2-column mobile) -->
+<section class="grid grid-cols-2 gap-4">
+<!-- Product Card 1 -->
+<div class="group flex flex-col">
+<div class="product-image-container relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A moody, high-end product shot of dried Borage leaves in a dark glass apothecary jar. The lighting is cinematic and low-key, highlighting the silver-fuzz texture of the herbs with a warm golden glow. The background is a dark charcoal, and the overall aesthetic is botanical noir with a focus on luxury and ancient healing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYXDnnGWfalEYrCsNvla36zJxi06_Q0bKuA1KtUTX_fahVDhj62IqwZJIXIX77KI5Lwfhg5gT0VSaSmgGuLrDC6voSEzMwH6gW9MMnYlbXtoyqkRoav7KNzVfjkFQaVKI0LOgA6oOxPk3S5Iwa56452mitUAwhVVvBvb6ZqfSg8yVDoNR7tsHBC3Yc4xW-GCB1SRbdIjzhU5_FFNvzf5fC0LRUNWcyLiMFyyt2pAfeRM7qiqcaH7MeCg2-mhA3cHvh9A5ZNHvwt2g"/>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Essence</span>
+<h3 class="font-headline-md text-[18px] text-on-surface leading-tight">Dried Borage</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">$24.00</p>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col">
+<div class="product-image-container relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-contrast macro photograph of whole Thyme sprigs resting on a dark slate surface. Candlelight from the side creates deep shadows and illuminates the tiny green leaves with a golden rim light. The mood is quiet, authoritative, and deeply organic, fitting a premium digital apothecary flagship experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY1DS6uEBMl90jFRfRMjZKokhF-87VE2jAJpAFfpvLSxR_vo_0hMJCfCINj0vzXOMnY7LV-C_v0jjiJiOi5a9WKujSfXoPZjcrEMizKRLa8ypqK7ORFsWPDSPKa6d3FvQbxIXN-N5xZmLbV6y29KDNQjS4vVXOKFoQmIzq2y1-PjwxapuhJYRkPw4O5s8iEpd0msVlSeNlQvwhdkWROQxNyaEdXnbxMRa7vW-CgH6BB006H9jAKb76VQuZq2ASrGRzgRoLpn72-BM"/>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Ritual</span>
+<h3 class="font-headline-md text-[18px] text-on-surface leading-tight">Whole Thyme</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">$18.00</p>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col">
+<div class="product-image-container relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist editorial shot of dried lavender buds spilling out of a small linen pouch. The image uses a dark charcoal and gold palette, with soft diffused light creating a serene sanctuary atmosphere. The visual style is cinematic minimalism, emphasizing negative space and high-quality organic textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEODAR-edhkh69auxFcKTS9A-RAjhvqmiA4fxtj5LXB5nl44KyfUSB3Nt3Rys-4cduIhOCk5J8gumNO-RgHULcoUA08UCTAJapOX66yKtgIo5JeQqFfXkJxx_pJT4U9PM8iGrea5wHscw704_U9R1fSqg-ebUQZSmqh0jsd3J9D9f8YXjuuY3SUZMnjSCE5S1wZwMSvi4El157leGGoSRZoCtQavlmBnaG9uIQoNQY5G6knepQb9JgmbLTrQYshHV7KganZbC9C-0"/>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Apothecary</span>
+<h3 class="font-headline-md text-[18px] text-on-surface leading-tight">Mountain Lavender</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">$22.00</p>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col">
+<div class="product-image-container relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Dried elderberries in a handcrafted ceramic bowl, set against a dark, moody background. The berries have a deep purple-black sheen, caught in a sliver of golden light. The composition is artistic and offset, mimicking the organic nature of plants within a luxurious dark mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDxc5Yi3af5TbzgrmCTU0M2X4b8usffGC0vPQQMzzbtlSgD5uBRj2V-L2rlV_FE7ay5Z0UeJVlbTDJP7omos7cl3375tuS7X41Gd86B-zBHWS_Q83q80FT5kZGe44w-7ZHl35Jpt5oLWVxV18tT_D66B2-LTpJcst1icyWeoeLSO3uVsqSKVHvXVX7-_XlUGv0_wUCi4QUnsamT0RwzPQ8epcVqINXiA8RppYN798hQuVc8OnunDoUt7Cg8TKpLw_wLNvA_Co7pxo"/>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Archive</span>
+<h3 class="font-headline-md text-[18px] text-on-surface leading-tight">Wild Elderberry</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">$28.00</p>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col">
+<div class="product-image-container relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of dried Rosehip shells in a vintage brass measuring spoon. The warm gold of the metal contrasts with the deep red of the botanicals. Soft bokeh in the background suggests an old-world lab or sanctuary. The lighting is low-key with golden accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXwHuJHD4HK60BQtLXoO5O5XsOovWC9xHw-xSBmwPu5E3eqIPFeg7Vj0LYC7Kp3-nTKNboiOcxziHOM9pAQGbxrosM7IGR7Q6FG54k2Itg-cCI0S0qLGOZE5hdrSCXl881RhwYHqvyb553im89zdg6vktYMfUaU2K_HI7GYL4uq5-v0azoClONF1EESaKN3q0lrPAgk3nQGa8SGrBHTMiWDLIYEgdzuHPlXriPO-8CqqYGMGQtY9SdMyLBMSiwQfiPbgu9rRWzAK0"/>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Essence</span>
+<h3 class="font-headline-md text-[18px] text-on-surface leading-tight">Crushed Rosehip</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">$26.00</p>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col">
+<div class="product-image-container relative aspect-[3/4] overflow-hidden rounded-lg bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Bundle of dried white sage tied with a silk ribbon. The texture of the sage leaves is highlighted by high-contrast lighting, casting long artistic shadows on a dark surface. The mood is quiet and authoritative, suggesting a premium wellness experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcgWmWqu3grvLDA1jwQxWbktPjsNSxNTHhcMOwqSInuPwxsgj5KKwUgFxqFFbyQCxrD88ycYjRZlRrb2dsn5D22yP6dNUgS__LcZinKFZ0Yd1LerDuhhT5EYjkryXgS01SyVTRm5aHq55D_jGP_AYEvz6Q-cNEoKwOrYBdltqg9wVbhEvEc6lrYMdYkFa4xWV-LyulcYi_xTVWzFeHCt88osSSVMOthZaPryxzMsORsfbW3oVUJqZUncca4ea215lLRmJdUWnQDyM"/>
+</div>
+<div class="mt-4 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Ritual</span>
+<h3 class="font-headline-md text-[18px] text-on-surface leading-tight">Sacred Sage</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">$32.00</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Filters Button -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full shadow-lg shadow-primary/20 flex items-center gap-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+<span class="font-label-md text-label-md">Filters</span>
+</button>
+</div>
+<!-- Footer Shell -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="grid grid-cols-1 gap-gutter px-margin-mobile max-w-container-max mx-auto text-center md:text-left">
+<div>
+<h4 class="font-display-lg text-[24px] text-primary mb-6">Fontaine</h4>
+<p class="font-body-md text-on-surface-variant mb-8 max-w-xs mx-auto md:mx-0">
+                    A collection of rare essences for the modern seeker.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8 text-left">
+<ul class="space-y-3">
+<li><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Apothecary</a></li>
+<li><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Essences</a></li>
+<li><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Rituals</a></li>
+</ul>
+<ul class="space-y-3">
+<li><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping</a></li>
+<li><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Returns</a></li>
+<li><a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a></li>
+</ul>
+</div>
+<div class="mt-12 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-body-md text-on-surface-variant text-[12px] opacity-60">
+                    © 2024 Fontaine Apothecary. Healing through time.
+                </p>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Mobile Destination Rule) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-low/80 backdrop-blur-xl border-t border-outline-variant/10 z-50">
+<div class="flex justify-around items-center h-16">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="text-[10px] font-label-sm">Shop</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="text-[10px] font-label-sm">Journal</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-sm">Profile</span>
+</a>
+</div>
+</nav>
+<script>
+        // Micro-interaction for the header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+
+        // Simple interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.querySelector('img').classList.add('scale-105');
+            });
+            card.addEventListener('touchend', () => {
+                card.querySelector('img').classList.remove('scale-105');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#131313",
+                    "tertiary-container": "#a9ba78",
+                    "surface-bright": "#393939",
+                    "surface-variant": "#353534",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-container": "#3d4a14",
+                    "surface-container": "#201f1f",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-highest": "#353534",
+                    "outline-variant": "#4d4635",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline": "#99907c",
+                    "on-error": "#690005",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-fixed-variant": "#3e4c16",
+                    "on-tertiary": "#283501",
+                    "on-secondary-container": "#6d5000",
+                    "primary-container": "#d4af37",
+                    "surface-container-low": "#1c1b1b",
+                    "error": "#ffb4ab",
+                    "background": "#131313",
+                    "primary": "#f2ca50",
+                    "on-primary-fixed": "#241a00",
+                    "secondary-fixed": "#ffdfa0",
+                    "inverse-primary": "#735c00",
+                    "secondary-container": "#ffbf00",
+                    "secondary": "#ffe2ab",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-primary-container": "#554300",
+                    "error-container": "#93000a",
+                    "surface-tint": "#e9c349",
+                    "on-tertiary-fixed": "#161f00",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#ffe088",
+                    "on-secondary": "#402d00",
+                    "on-primary": "#3c2f00",
+                    "secondary-fixed-dim": "#fbbc00",
+                    "on-background": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#d9eaa3",
+                    "tertiary": "#c5d691",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-surface-variant": "#d0c5af",
+                    "tertiary-fixed-dim": "#bdce89"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "24px",
+                    "unit": "8px",
+                    "section-gap": "120px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            -webkit-font-smoothing: antialiased;
+        }
+        .checkout-step-content {
+            display: none;
+            animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .checkout-step-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        input:focus {
+            outline: none;
+            border-bottom-color: #f2ca50 !important;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            background-color: rgba(19, 19, 19, 0.8);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Top Navigation for Focused Journey (Back button enabled) -->
+<nav class="fixed top-0 left-0 w-full z-50 glass-header px-margin-mobile py-4 flex items-center justify-between">
+<button class="flex items-center text-on-surface-variant hover:text-primary transition-colors" onclick="window.history.back()">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary tracking-tighter scale-75">Fontaine</span>
+<div class="w-6"></div> <!-- Spacer for symmetry -->
+</nav>
+<!-- Main Checkout Flow -->
+<main class="flex-grow pt-24 px-margin-mobile pb-32">
+<!-- Progress Indicator -->
+<div class="flex justify-between items-center mb-10 max-w-xs mx-auto">
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(242,202,80,0.5)]" id="dot-1"></div>
+<div class="h-[1px] flex-grow mx-2 bg-outline-variant/30"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant" id="dot-2"></div>
+<div class="h-[1px] flex-grow mx-2 bg-outline-variant/30"></div>
+<div class="w-2 h-2 rounded-full bg-surface-variant" id="dot-3"></div>
+</div>
+<form class="max-w-md mx-auto space-y-8" id="checkout-form">
+<!-- Step 1: Essence of Delivery -->
+<section class="checkout-step-content active" id="step-1">
+<header class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">Shipping</h1>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Where shall we send your healing?</p>
+</header>
+<div class="space-y-6">
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="Full Name" required="" type="text"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="Email Address" required="" type="email"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="Address Line" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="City" required="" type="text"/>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="Postal Code" required="" type="text"/>
+</div>
+</div>
+<div class="mt-12">
+<button class="w-full py-5 bg-primary text-on-primary font-label-md text-label-md tracking-[0.2em] uppercase rounded-none transition-all hover:brightness-110 active:scale-[0.98] shadow-lg shadow-primary/10" onclick="nextStep(2)" type="button">
+                        Continue to Ritual
+                    </button>
+</div>
+</section>
+<!-- Step 2: Shipping Method & Ritual -->
+<section class="checkout-step-content" id="step-2">
+<header class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">Shipping Method</h1>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Select your arrival rhythm</p>
+</header>
+<div class="space-y-4">
+<label class="flex items-center justify-between p-5 bg-surface-container border border-outline-variant/30 rounded-none cursor-pointer group hover:border-primary/50 transition-colors">
+<div class="flex items-center">
+<input checked="" class="text-primary focus:ring-0 bg-transparent border-outline mr-4" name="shipping" type="radio"/>
+<div>
+<p class="font-label-md text-label-md">Standard Carriage</p>
+<p class="text-on-surface-variant text-label-sm italic">5-7 Business Days</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary">Complimentary</span>
+</label>
+<label class="flex items-center justify-between p-5 bg-surface-container border border-outline-variant/30 rounded-none cursor-pointer group hover:border-primary/50 transition-colors">
+<div class="flex items-center">
+<input class="text-primary focus:ring-0 bg-transparent border-outline mr-4" name="shipping" type="radio"/>
+<div>
+<p class="font-label-md text-label-md">Swift Apothecary</p>
+<p class="text-on-surface-variant text-label-sm italic">2-3 Business Days</p>
+</div>
+</div>
+<span class="font-label-md text-label-md text-primary">$18.00</span>
+</label>
+</div>
+<div class="mt-12 space-y-4">
+<button class="w-full py-5 bg-primary text-on-primary font-label-md text-label-md tracking-[0.2em] uppercase rounded-none transition-all hover:brightness-110 shadow-lg shadow-primary/10" onclick="nextStep(3)" type="button">
+                        Proceed to Payment
+                    </button>
+<button class="w-full py-3 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:text-primary transition-colors" onclick="nextStep(1)" type="button">
+                        Modify Address
+                    </button>
+</div>
+</section>
+<!-- Step 3: Payment Ceremony -->
+<section class="checkout-step-content" id="step-3">
+<header class="mb-8">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile mb-2">Payment</h1>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">Finalize the exchange</p>
+</header>
+<!-- Summary Card -->
+<div class="mb-10 p-6 bg-surface-container-low border-l-2 border-primary">
+<div class="flex justify-between items-center mb-4">
+<span class="text-on-surface-variant font-label-sm">Order Total</span>
+<span class="font-headline-md text-headline-md text-primary">$124.00</span>
+</div>
+<div class="flex -space-x-2 overflow-hidden">
+<div class="w-10 h-10 border border-surface bg-surface-variant rounded-full overflow-hidden" data-alt="A macro photograph of a dark amber glass bottle with a minimalist cream label sitting on a stone slab, bathed in warm cinematic candle light.">
+<img class="w-full h-full object-cover" data-alt="A high-end macro shot of a dark medicinal glass vial with a cork stopper, illuminated by soft golden light reflecting on a dark polished surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Fr74P4NYH4quO46ScE_40RKgJNAYSLNGzhbhXNWeIt_o74o5dhDGp22r6MXU0BKsDzMfU7jMM7cbkij90F1xvLP2V5e0JqhQa0z21vlMyTbwXQ8HvsB6e3MZVy1lBMMDUdaeaJlGV8zy53oV2Jf_Q_p4_L0iRDSpbAFrk8rxqCnPNgCHYirCPrhcYYCn1LsjgIEdWggCVmnImh4vKnELRFsduXILgjs-tGjjaG0Z6Rt_lZZ_P6HJ_f9f1PoRDiQvWFED1vp5nqc"/>
+</div>
+<div class="w-10 h-10 border border-surface bg-surface-variant rounded-full overflow-hidden" data-alt="A close up shot of dried botanical herbs and flowers resting on a dark slate surface, with a dramatic chiaroscuro lighting effect.">
+<img class="w-full h-full object-cover" data-alt="Detailed studio photography of organic dried lavender and rose petals against a deep charcoal backdrop, styled in a luxury apothecary aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5i_UO9KbJSG586LoWpFglTLBOTy11rxVIUI3B4qmyGBjv9-bo0dkvl97tqBALkVilqPEtlx3OUUFP0VewqFsI-mHDaXEGheUvYyMDz5u_9LLbz_GtRwkUp6uy1mKY8gBTf8kGSCFymp4-yV90_SPfSk2A0Wepyzw-xp6FCIpWlO70EsJ8NvHhNm2fxJMndRLyaqcmQADcePs1c42i_-K8SR57awneOO6xFRE-P-_AJ_f-1Qcl6H584H5vvRhHoU2aKvadLIWDI9U"/>
+</div>
+<div class="flex items-center justify-center w-10 h-10 border border-surface bg-surface-container rounded-full text-label-sm text-on-surface-variant">
+                            +1
+                        </div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="Card Number" type="text"/>
+<span class="absolute right-0 bottom-3 material-symbols-outlined text-outline-variant">credit_card</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="MM / YY" type="text"/>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 transition-all placeholder:text-on-surface-variant/40" placeholder="CVV" type="password"/>
+</div>
+</div>
+<div class="mt-12">
+<button class="group relative w-full py-5 bg-primary text-on-primary font-label-md text-label-md tracking-[0.2em] uppercase rounded-none overflow-hidden shadow-lg shadow-primary/20" type="submit">
+<span class="relative z-10">Complete Purchase</span>
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+</button>
+</div>
+<p class="mt-6 text-center text-on-surface-variant/50 text-[10px] uppercase tracking-widest">
+                    Secure encrypted transmission via Fontaine Protocol
+                </p>
+</section>
+</form>
+</main>
+<!-- Footer minimized for checkout focus -->
+<footer class="mt-auto py-8 bg-surface-container-lowest text-center border-t border-outline-variant/5">
+<p class="font-label-sm text-label-sm text-on-surface-variant/60 tracking-widest uppercase">
+            © 2024 Fontaine Apothecary
+        </p>
+</footer>
+<script>
+        function nextStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.checkout-step-content').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show target step
+            document.getElementById('step-' + step).classList.add('active');
+            
+            // Update dots
+            for (let i = 1; i <= 3; i++) {
+                const dot = document.getElementById('dot-' + i);
+                if (i < step) {
+                    dot.className = 'w-2 h-2 rounded-full bg-tertiary-container shadow-none';
+                } else if (i === step) {
+                    dot.className = 'w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(242,202,80,0.5)] transition-all duration-500';
+                } else {
+                    dot.className = 'w-2 h-2 rounded-full bg-surface-variant';
+                }
+            }
+            
+            // Scroll to top of form
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Handle form submission
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span>';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = 'Healing Dispatched';
+                btn.classList.add('bg-tertiary-container', 'text-on-tertiary-container');
+                setTimeout(() => {
+                    alert('Order #FNT-2024-' + Math.floor(Math.random() * 10000) + ' confirmed. May your ritual begin soon.');
+                }, 500);
+            }, 1800);
+        });
+
+        // Micro-interaction for inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>

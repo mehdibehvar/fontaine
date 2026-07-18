@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Globe, Sprout, Trees } from 'lucide-react';
 
 export function Footer() {
@@ -44,12 +45,12 @@ export function Footer() {
           <ul className="space-y-3">
             {['Essences', 'Rituals', 'Apothecary', 'Archive'].map((link) => (
               <li key={link}>
-                <a
-                  href="#"
+                <Link
+                  href="/shop"
                   className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md"
                 >
                   {link}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -61,12 +62,12 @@ export function Footer() {
           <ul className="space-y-3">
             {['Sitemap', 'Privacy Policy', 'Terms of Service', 'Contact'].map((link) => (
               <li key={link}>
-                <a
-                  href="#"
+                <Link
+                  href="/shop"
                   className="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md"
                 >
                   {link}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

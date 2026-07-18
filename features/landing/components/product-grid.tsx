@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Plus } from 'lucide-react';
 
@@ -9,6 +10,7 @@ interface Product {
   price: number;
   image: string;
   imageAlt: string;
+  slug?: string;
   badge?: string;
 }
 
@@ -18,8 +20,9 @@ const products: Product[] = [
     name: 'Whole Thyme',
     category: 'Hand-Dried / 30g',
     price: 34.0,
-      image: '/herbs/thyme.jpg',
-     imageAlt: 'Fontaine whole thyme in premium packaging',
+    slug: 'whole-thyme',
+    image: '/herbs/thyme.jpg',
+    imageAlt: 'Fontaine whole thyme in premium packaging',
     badge: 'Limited Release',
   },
   {
@@ -27,24 +30,25 @@ const products: Product[] = [
     name: 'Dried Borage Flower',
     category: 'Ritual Grade / 15g',
     price: 42.0,
-      image: '/herbs/borage.jpg',
-     imageAlt: 'Dried borage flowers in premium glass jar',
+    slug: 'dried-borage-flower',
+    image: '/herbs/borage.jpg',
+    imageAlt: 'Dried borage flowers in premium glass jar',
   },
   {
     id: '3',
     name: 'Vesper Blend',
     category: 'Sleep Tonic / 50ml',
     price: 58.0,
-      image: '/herbs/vesper.jpg',
-     imageAlt: 'Fontaine vesper sleep blend bottle',
+    image: '/herbs/vesper.jpg',
+    imageAlt: 'Fontaine vesper sleep blend bottle',
   },
   {
     id: '4',
     name: 'Desert Sage',
     category: 'Smudge Ritual / Pair',
     price: 28.0,
-      image: '/herbs/sage.jpg',
-     imageAlt: 'Desert sage smudge sticks from Fontaine',
+    image: '/herbs/sage.jpg',
+    imageAlt: 'Desert sage smudge sticks from Fontaine',
   },
 ];
 
@@ -53,17 +57,21 @@ export function ProductGrid() {
     <section className="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <div className="flex flex-col md:flex-row justify-between items-baseline mb-16 gap-8">
           <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Botanical Specimens</h2>
-        <a className="font-label-md text-label-md text-primary group flex items-center gap-2 hover:text-primary/80 transition-colors">
+        <Link href="/shop" className="font-label-md text-label-md text-primary group flex items-center gap-2 hover:text-primary/80 transition-colors">
           View Complete Apothecary
           <span className="w-12 h-px bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
         {products.map((product, index) => (
-          <div key={product.id} className="group cursor-pointer">
+          <Link
+            key={product.id}
+            href={product.slug ? `/products/${product.slug}` : '/shop'}
+            className="group cursor-pointer block"
+          >
             {/* Product Image */}
-            <div className={`aspect-[4/5] overflow-hidden bg-surface-container-low rounded-lg mb-6 relative ${index % 2 === 1 && index > 0 ? 'md:mt-12' : ''}`}>
+            <div className="aspect-[4/5] overflow-hidden bg-surface-container-low rounded-lg mb-6 relative">
               <Image
                 src={product.image}
                 alt={product.imageAlt}
@@ -94,7 +102,7 @@ export function ProductGrid() {
                  <Plus />
               </button>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
