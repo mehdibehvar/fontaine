@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -39,6 +39,14 @@ const galleryImages: { src: string; alt: string }[] = [
   },
 ];
 
+const mobileGalleryImages: { src: string; alt: string }[] = [
+  {
+    src: 'https://lh3.googleusercontent.com/aida/AP1WRLurbSr93iLtWBEtimcNG5k5iSePlVXWV8rrYO-Y-6iraRwutMdLf6DIZ7jfCZIeS6jFfD_Buk81vuMMpTni_I9cBOfF7P4hT9dkYdGxZvu0FLymL4YOx3OFVV6OBlELcyG2K6MIQsn8wekRwl_0OxMmMKttEznp-ZAUkuLFPJejU0jWvjUPaAmtpsED2UtrMXxjAXkSj3gjYV75ygY80k9UbPl9bJGocjQ6hd390f50T3VR7yyM3My8FIs',
+    alt: 'Cinematic close-up of vibrant blue dried borage flowers.',
+  },
+  galleryImages[1],
+];
+
 const accordionData = (product: ProductSeed) => [
   {
     id: 'origin',
@@ -71,7 +79,7 @@ export function ProductDetail({
   const [openAccordion, setOpenAccordion] = useState<string | null>('origin');
   const [selectedWeight, setSelectedWeight] = useState(0);
   const [activeImage, setActiveImage] = useState(0);
-  const [bagOpen, setBagOpen] = useState(false);
+  const mobileGalleryRef = useRef<HTMLDivElement>(null);
 
   const variants = product.variants ?? [
     { weight: '50g', priceCents: product.priceCents },
@@ -79,9 +87,9 @@ export function ProductDetail({
   const currentPrice = variants[selectedWeight]?.priceCents ?? product.priceCents;
 
   return (
-    <main className="pt-[100px]">
+    <main className="bg-surface pt-16 pb-32 md:pt-[100px] md:pb-0">
       {/* Breadcrumbs */}
-      <nav className="px-margin-mobile md:px-margin-desktop py-8 max-w-container-max mx-auto flex items-center space-x-3 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest">
+      <nav className="px-margin-mobile md:px-margin-desktop py-6 md:py-8 max-w-container-max mx-auto flex items-center space-x-2 md:space-x-3 text-[10px] md:text-label-sm text-on-surface-variant font-label-sm uppercase tracking-widest">
         <Link className="hover:text-primary transition-colors" href="/shop">
           Apothecary
         </Link>
@@ -94,17 +102,21 @@ export function ProductDetail({
       </nav>
 
       {/* Hero Section */}
-      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter mb-section-gap">
+      <section className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12 md:mb-section-gap">
         {/* Gallery */}
         <div className="md:col-span-7">
           {/* Mobile snap carousel */}
-          <div className="md:hidden relative w-full aspect-[3/4] overflow-hidden bg-surface-container-low rounded-lg">
+          <div className="md:hidden relative -mx-margin-mobile w-[calc(100%+48px)] aspect-[4/5] overflow-hidden bg-surface">
             <div
-              className="flex h-full transition-transform duration-500"
-              style={{ transform: `translateX(-${activeImage * 100}%)` }}
+              ref={mobileGalleryRef}
+              className="flex h-full snap-x snap-mandatory overflow-x-auto scroll-smooth hide-scrollbar"
+              onScroll={(event) => {
+                const { clientWidth, scrollLeft } = event.currentTarget;
+                setActiveImage(Math.round(scrollLeft / clientWidth));
+              }}
             >
-              {galleryImages.map((img) => (
-                <div key={img.src} className="w-full h-full flex-shrink-0">
+              {mobileGalleryImages.map((img) => (
+                <div key={img.src} className="relative w-full h-full flex-shrink-0 snap-center">
                   <Image
                     src={img.src}
                     alt={img.alt}
@@ -115,11 +127,16 @@ export function ProductDetail({
               ))}
             </div>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-              {galleryImages.map((img, i) => (
+              {mobileGalleryImages.map((img, i) => (
                 <button
                   key={img.src}
                   aria-label={`View image ${i + 1}`}
-                  onClick={() => setActiveImage(i)}
+                  onClick={() => {
+                    mobileGalleryRef.current?.scrollTo({
+                      left: i * mobileGalleryRef.current.clientWidth,
+                      behavior: 'smooth',
+                    });
+                  }}
                   className={`w-1.5 h-1.5 rounded-full transition-colors ${
                     i === activeImage ? 'bg-primary' : 'bg-on-surface/30'
                   }`}
@@ -159,34 +176,35 @@ export function ProductDetail({
         </div>
 
         {/* Details */}
-        <div className="md:col-span-5 md:sticky md:top-[120px] h-fit">
-          <div className="inline-block px-3 py-1 bg-tertiary-container/10 border border-tertiary-container/30 text-tertiary font-label-sm text-label-sm uppercase tracking-widest mb-6">
+        <div className="md:col-span-5 md:sticky md:top-[120px] h-fit flex flex-col">
+          <div className="order-1 inline-block w-fit px-3 py-1 bg-primary/5 md:bg-tertiary-container/10 border border-primary/20 md:border-tertiary-container/30 text-primary md:text-tertiary font-label-sm text-[10px] md:text-label-sm uppercase tracking-widest mb-3 md:mb-6">
             {product.tagline}
           </div>
-          <h1 className="font-headline-lg text-headline-lg text-on-surface mb-4">
+          <h1 className="order-2 font-display-lg-mobile md:font-headline-lg text-display-lg-mobile md:text-headline-lg text-on-surface mb-3 md:mb-4">
             {product.name}
           </h1>
-          <p className="text-primary font-headline-md text-headline-md mb-8">
+          <p className="order-3 text-primary font-headline-md text-headline-md mb-8">
             {formatEur(currentPrice)}
           </p>
 
           {product.description && (
-            <p className="font-body-md text-on-surface-variant leading-relaxed italic border-l-2 border-primary/20 pl-6 mb-10">
+            <p className="order-6 md:order-none font-body-lg md:font-body-md text-on-surface-variant leading-relaxed italic border-l-2 border-primary/20 pl-4 md:pl-6 mb-10">
               {product.description}
             </p>
           )}
 
           {/* Weight Selection */}
-          <div className="mb-10">
-            <p className="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant mb-4">
-              Select Weight
+          <div className="order-4 mb-8 md:mb-10">
+            <p className="font-label-sm text-label-sm uppercase tracking-widest text-outline md:text-on-surface-variant mb-3 md:mb-4">
+              <span className="md:hidden">Quantity</span>
+              <span className="hidden md:inline">Select Weight</span>
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3 md:gap-4">
               {variants.map((variant, i) => (
                 <button
                   key={variant.weight}
                   onClick={() => setSelectedWeight(i)}
-                  className={`px-8 py-3 font-label-md text-label-md transition-all ${
+                  className={`px-6 md:px-8 py-2 md:py-3 font-label-md text-label-md transition-all ${
                     i === selectedWeight
                       ? 'border border-primary bg-primary/5 text-primary'
                       : 'border border-outline text-on-surface-variant hover:border-primary'
@@ -199,20 +217,19 @@ export function ProductDetail({
           </div>
 
           {/* CTA */}
-          <div className="space-y-4 mb-12">
+          <div className="order-5 space-y-4 mb-10 md:mb-12">
             <button
-              onClick={() => setBagOpen(false)}
-              className="w-full bg-primary hover:bg-primary-fixed text-on-primary py-5 font-label-md text-label-md uppercase tracking-widest transition-all duration-300"
+              className="hidden md:block w-full bg-primary hover:bg-primary-fixed text-on-primary py-5 font-label-md text-label-md uppercase tracking-widest transition-all duration-300"
             >
               Add to Apothecary
             </button>
-            <button className="w-full border border-primary text-primary py-5 font-label-md text-label-md uppercase tracking-widest hover:bg-primary/5 transition-all duration-300">
+            <button className="w-full border border-primary text-primary py-4 md:py-5 font-label-md text-label-md uppercase tracking-widest hover:bg-primary/5 transition-all duration-300">
               Subscribe &amp; Save 10%
             </button>
           </div>
 
           {/* Accordions */}
-          <div className="border-t border-outline-variant/30">
+          <div className="order-7 md:order-none border-t border-outline-variant/20 md:border-outline-variant/30 mb-12 md:mb-0">
             {accordionData(product).map((item) => {
               const isOpen = openAccordion === item.id;
               return (
@@ -227,12 +244,7 @@ export function ProductDetail({
                     className="w-full py-6 flex justify-between items-center text-on-surface font-label-md text-label-md uppercase tracking-widest"
                   >
                     {item.title}
-                    <ChevronRight
-                      className="transition-transform"
-                      style={{
-                        transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)',
-                      }}
-                    />
+                    <ChevronRight className={`transition-transform ${isOpen ? 'rotate-90' : ''}`} />
                   </button>
                   {isOpen && (
                     <p className="pb-6 text-on-surface-variant font-body-md leading-relaxed">
@@ -247,11 +259,11 @@ export function ProductDetail({
       </section>
 
       {/* Reviews */}
-      <section className="bg-surface-container-lowest py-section-gap">
+      <section className="bg-surface-container-low md:bg-surface-container-lowest py-16 md:py-section-gap">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-gutter">
+          <div className="flex flex-col md:flex-row justify-between md:items-end mb-8 md:mb-16 gap-gutter">
             <div>
-              <h2 className="font-headline-lg text-headline-lg mb-4">
+              <h2 className="font-display-lg-mobile md:font-headline-lg text-[32px] md:text-headline-lg mb-4">
                 Patient Experiences
               </h2>
               <div className="flex items-center space-x-4">
@@ -273,16 +285,16 @@ export function ProductDetail({
                 </span>
               </div>
             </div>
-            <button className="font-label-md text-label-md text-primary hover:underline underline-offset-8 transition-all">
+            <button className="hidden md:block font-label-md text-label-md text-primary hover:underline underline-offset-8 transition-all">
               Write a Review
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-gutter overflow-x-auto md:overflow-visible pb-4 md:pb-0 -mr-margin-mobile md:mr-0 hide-scrollbar snap-x snap-mandatory">
             {reviews.map((review) => (
               <div
                 key={review.name}
-                className="bg-surface p-8 border border-outline-variant/20 glow-gold"
+                className="min-w-[280px] md:min-w-0 bg-surface p-6 md:p-8 border border-outline-variant/20 glow-gold snap-start"
               >
                 <div className="flex text-primary mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -308,12 +320,12 @@ export function ProductDetail({
       </section>
 
       {/* Related Products */}
-      <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
-        <div className="flex justify-between items-center mb-16">
-          <h2 className="font-headline-lg text-headline-lg">
+      <section className="py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+        <div className="flex justify-between items-center mb-8 md:mb-16">
+          <h2 className="font-display-lg-mobile md:font-headline-lg text-[28px] md:text-headline-lg">
             Botanical Companions
           </h2>
-          <div className="flex space-x-4">
+          <div className="hidden md:flex space-x-4">
             <button className="p-2 border border-outline rounded-full hover:border-primary hover:text-primary transition-all">
               <ChevronLeft />
             </button>
@@ -322,14 +334,14 @@ export function ProductDetail({
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+        <div className="flex md:grid md:grid-cols-4 gap-4 md:gap-gutter overflow-x-auto md:overflow-visible -mx-margin-mobile md:mx-0 px-margin-mobile md:px-0 pb-8 md:pb-0 hide-scrollbar snap-x snap-mandatory">
           {companions.map((companion) => (
             <Link
               key={companion.slug}
               href={`/products/${companion.slug}`}
-              className="group cursor-pointer"
+              className="min-w-[200px] md:min-w-0 group cursor-pointer snap-start"
             >
-              <div className="aspect-[3/4] overflow-hidden mb-6 rounded-lg">
+              <div className="relative aspect-[3/4] overflow-hidden mb-3 md:mb-6 bg-surface-container">
                 <Image
                   src={companion.image}
                   alt={companion.imageAlt}
@@ -340,10 +352,10 @@ export function ProductDetail({
               <p className="font-label-sm text-label-sm uppercase tracking-widest text-primary/60 mb-2">
                 {companion.family}
               </p>
-              <h3 className="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors mb-2">
+              <h3 className="font-label-sm md:font-headline-md text-label-sm md:text-headline-md text-on-surface group-hover:text-primary transition-colors mb-1 md:mb-2">
                 {companion.name}
               </h3>
-              <p className="font-body-md text-on-surface-variant">
+              <p className="font-label-sm md:font-body-md text-label-sm md:text-body-md text-primary md:text-on-surface-variant">
                 {formatEur(companion.priceCents)}
               </p>
             </Link>
@@ -352,16 +364,16 @@ export function ProductDetail({
       </section>
 
       {/* Mobile sticky add-to-bag bar */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-high/95 backdrop-blur-xl px-margin-mobile py-6 z-50 flex items-center gap-4 border-t border-outline-variant/10">
+      <div className="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-high/90 backdrop-blur-xl px-margin-mobile py-8 z-50 flex items-center justify-between gap-4 border-t border-outline-variant/10 shadow-2xl">
         <div className="flex flex-col min-w-[80px]">
           <span className="font-label-sm text-label-sm text-outline uppercase tracking-tighter">
-            Total
+            Price
           </span>
           <span className="font-headline-md text-headline-md text-on-surface">
             {formatEur(currentPrice)}
           </span>
         </div>
-        <button className="flex-1 bg-primary-container text-on-primary-container font-label-md py-4 uppercase tracking-[0.2em] flex justify-center items-center gap-2 hover:bg-primary transition-all duration-300 active:scale-95 shadow-lg shadow-primary/10">
+        <button className="bg-primary-container text-on-primary-container font-label-md px-6 py-4 uppercase tracking-[0.2em] flex justify-center items-center gap-2 hover:bg-primary transition-all duration-300 active:scale-[0.98] shadow-xl shadow-primary/5">
           Add to Bag
           <ShoppingBag className="text-[20px]" />
         </button>

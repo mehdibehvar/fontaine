@@ -82,6 +82,8 @@ prisma/
   in `components/` or in another feature. Reuse or extend before creating
   new.
 
+
+
 ## Non-negotiable coding rules
 
 1. Strict TypeScript everywhere. Never use `any`.

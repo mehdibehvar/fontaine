@@ -6,8 +6,8 @@ import { Search, User, ShoppingBag, Menu, X } from 'lucide-react';
 
 const links = [
   { href: '/shop', label: 'Essences' },
-  { href: '/shop', label: 'Rituals' },
-  { href: '/shop', label: 'Apothecary', active: true },
+  { href: '/shop', label: 'Rituals', active: true },
+  { href: '/shop', label: 'Apothecary' },
   { href: '/shop', label: 'Archive' },
 ];
 
@@ -51,7 +51,7 @@ export function StorefrontNav() {
           <button className="hover:opacity-80 transition-opacity" aria-label="Search">
             <Search className="text-on-surface-variant hover:text-primary transition-colors" />
           </button>
-          <button className="hover:opacity-80 transition-opacity" aria-label="Account">
+          <button className="hidden md:block hover:opacity-80 transition-opacity" aria-label="Account">
             <User className="text-on-surface-variant hover:text-primary transition-colors" />
           </button>
           <button
@@ -59,12 +59,14 @@ export function StorefrontNav() {
             aria-label="Shopping cart"
           >
             <ShoppingBag className="text-on-surface-variant hover:text-primary transition-colors" />
-            <span className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full" />
+            <span className="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-primary text-[10px] leading-4 text-center text-on-primary">
+              1
+            </span>
           </button>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden hover:opacity-80 transition-opacity"
+            className="hidden hover:opacity-80 transition-opacity"
             aria-label="Menu"
           >
             {isOpen ? (

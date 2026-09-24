@@ -25,9 +25,9 @@ export function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">
           {[
-            { href: '/shop', label: 'Archive' },
-            { href: '/shop', label: 'Essences' },
-            { href: '/shop', label: 'Rituals' },
+            { href: '/archive', label: 'Archive' },
+            { href: '/essence', label: 'Essences' },
+            { href: '/rituals', label: 'Rituals' },
             { href: '/shop', label: 'Apothecary' },
           ].map((item) => (
             <a
@@ -73,9 +73,9 @@ export function Navigation() {
         <div className="md:hidden border-t border-outline-variant/10 bg-surface-container-low">
           <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 space-y-4">
             {[
-              { href: '/shop', label: 'Archive' },
-              { href: '/shop', label: 'Essences' },
-              { href: '/shop', label: 'Rituals' },
+              { href: '/shop1', label: 'Archive' },
+              { href: '/shop2', label: 'Essences' },
+              { href: '/shop3', label: 'Rituals' },
               { href: '/shop', label: 'Apothecary' },
             ].map((item) => (
               <a
